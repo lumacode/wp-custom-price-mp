@@ -14,9 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_custom_content', 12 );
-
 function woocommerce_template_custom_content(){ 
     global $product;
 
@@ -34,7 +31,8 @@ function woocommerce_template_custom_content(){
 <?php endif;
 }
 
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_custom_price_list', 10 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_custom_content', 12 );
+
 
 function woocommerce_template_custom_price_list(){ 
     global $product;
@@ -46,4 +44,4 @@ function woocommerce_template_custom_price_list(){
 <?php endif;
 }
 
-
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_custom_price_list', 10 );
